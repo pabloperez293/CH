@@ -1,0 +1,137 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Oswald', sans-serif;
+    font-size: 25px;
+    box-sizing: border-box; /* Para que no ocupe espacio */
+}
+body{
+    background-image:url(../img/repeated-square.png);
+}
+
+a{
+    text-decoration: none;
+}
+#menu{
+    text-decoration:none;
+    width: 100%;
+    border-radius: 5%;
+    border-collapse: collapse;
+}
+.container1{
+    margin: 3rem;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+table{
+    font-size: 30px;
+    background-color: ivory;
+    border-collapse: collapse;
+    width: 100%;
+    border-radius: 2px;
+}
+li{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+i{
+    font-size: 18px;
+}
+td, th{
+    text-align: center;
+    padding: 8px;
+    font-size: 18px;
+}
+.info{
+    background-color: rgb(230, 226, 28);
+    white-space:5px; 
+}
+
+/* rellenosss */
+.arm{
+    width: 50%;
+    margin: 3rem;
+}
+.relleno{
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    display: grid;
+
+    grid-gap: 30px;
+
+}
+.item{
+    background: white;
+    cursor: pointer;
+    box-shadow: 0 0 5px 0 rgb(0, 0, 0, 0.85);
+}
+.item-img{
+    max-width: 100%;
+    display: block;
+}
+/* fin de rellenos */
+
+/* botones */
+.link{
+    position: relative;
+    display: block;
+    text-transform: uppercase;
+    text-decoration: none;
+    text-align: center;    
+    margin: 0 auto 12px;
+    z-index: 0;
+    transition: all 450ms ease;
+    cursor: pointer;
+}
+.link-1::after{
+    content: "";
+    display: block;
+    width: 0;
+    height: 2px;
+    background: rgb(228, 140, 216);
+    transition: width .3s;
+}
+.link-1:hover::after{
+    width: 100%;
+    transition: width .3s;
+}
+.link-2::after{
+    content: "";
+    display: block;
+    width: 0;
+    height: 2px;
+    background: rgb(228, 140, 216);
+    transition: width .3s;
+}
+.link-2:hover::after{
+    width: 100%;
+    transition: width .3s;
+}
+.link-3::after{
+    content: "";
+    display: block;
+    width: 0;
+    height: 2px;
+    background: rgb(228, 140, 216);
+    transition: width .3s;
+}
+.link-3:hover::after{
+    width: 100%;
+    transition: width .3s;
+}
+.link-4::after{
+    content: "";
+    display: block;
+    width: 0;
+    height: 2px;
+    background: rgb(228, 140, 216);
+    transition: width .3s;
+}
+.link-4:hover::after{
+    width: 100%;
+    transition: width .3s;
+}
+/* fin botones */
