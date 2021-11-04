@@ -1,137 +1,535 @@
-*{
-    margin: 0;
-    padding: 0;
-    font-family: 'Oswald', sans-serif;
-    font-size: 25px;
-    box-sizing: border-box; /* Para que no ocupe espacio */
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Oswald", sans-serif;
+  box-sizing: border-box; /* Para que no ocupe espacio */
+  text-decoration: none;
 }
-body{
-    background-image:url(../img/repeated-square.png);
+body {
+  background-image: url(../img/repeated-square.png);
+  font-size: 1.2rem;
+  line-height: 1.6rem;
 }
-
-a{
-    text-decoration: none;
-}
-#menu{
-    text-decoration:none;
-    width: 100%;
-    border-radius: 5%;
-    border-collapse: collapse;
-}
-.container1{
-    margin: 3rem;
-    text-align: center;
-    display: flex;
-    justify-content: center;
-}
-table{
-    font-size: 30px;
-    background-color: ivory;
-    border-collapse: collapse;
-    width: 100%;
-    border-radius: 2px;
-}
-li{
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-}
-i{
-    font-size: 18px;
-}
-td, th{
-    text-align: center;
-    padding: 8px;
-    font-size: 18px;
-}
-.info{
-    background-color: rgb(230, 226, 28);
-    white-space:5px; 
-}
-
-/* rellenosss */
-.arm{
-    width: 50%;
-    margin: 3rem;
-}
-.relleno{
-    width: 90%;
-    margin-left: auto;
-    margin-right: auto;
-    display: grid;
-
-    grid-gap: 30px;
-
-}
-.item{
-    background: white;
-    cursor: pointer;
-    box-shadow: 0 0 5px 0 rgb(0, 0, 0, 0.85);
-}
-.item-img{
-    max-width: 100%;
-    display: block;
-}
-/* fin de rellenos */
-
 /* botones */
-.link{
-    position: relative;
-    display: block;
-    text-transform: uppercase;
-    text-decoration: none;
-    text-align: center;    
-    margin: 0 auto 12px;
-    z-index: 0;
-    transition: all 450ms ease;
-    cursor: pointer;
+#header {
+  position: relative;
+  width: 100%;
 }
-.link-1::after{
-    content: "";
-    display: block;
-    width: 0;
-    height: 2px;
-    background: rgb(228, 140, 216);
-    transition: width .3s;
+.menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  background: #fff;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 9999;
 }
-.link-1:hover::after{
-    width: 100%;
-    transition: width .3s;
+.menu .logoCaja {
+  margin-left: 30px;
 }
-.link-2::after{
-    content: "";
-    display: block;
-    width: 0;
-    height: 2px;
-    background: rgb(228, 140, 216);
-    transition: width .3s;
+.menu .logoCaja h1 a {
+  color: rgb(231, 168, 168);
+  text-decoration: none;
+  font-size: 40px;
+  font-weight: 400;
 }
-.link-2:hover::after{
-    width: 100%;
-    transition: width .3s;
+
+.menu .contenedorLista {
+  margin-right: 25px;
 }
-.link-3::after{
-    content: "";
-    display: block;
-    width: 0;
-    height: 2px;
-    background: rgb(228, 140, 216);
-    transition: width .3s;
+.menu .contenedorLista .lista {
+  display: flex;
 }
-.link-3:hover::after{
-    width: 100%;
-    transition: width .3s;
+.menu .contenedorLista .lista li {
+  list-style: none;
 }
-.link-4::after{
-    content: "";
-    display: block;
-    width: 0;
-    height: 2px;
-    background: rgb(228, 140, 216);
-    transition: width .3s;
+.menu .contenedorLista .lista li a {
+  text-decoration: none;
+  margin: 0px 10px;
+  padding: 8px;
+  color: rgb(231, 168, 168);
+  font-size: 20px;
+  transition: 0.3s;
 }
-.link-4:hover::after{
-    width: 100%;
-    transition: width .3s;
+/* submenu inicio */
+.menu ul{
+  list-style: none;
 }
-/* fin botones */
+.submenu {
+  background:white;
+  position: absolute;
+  display: none;
+  margin: 10px;
+}
+.submenu li a{
+  display: block;
+  padding: 15px;
+}
+.lista li:hover .submenu{
+  display: block;
+  transform: translate(-10px);
+
+}
+
+/* fin submenu inicio */
+
+.link {
+  position: relative;
+  margin: 0 auto 12px;
+  transition: all 450ms ease;
+  cursor: pointer;
+}
+
+.menu ul a:hover {
+  color: #f2f2f2;
+  background: #6e6e6e;
+  transition:  all .3s;
+}
+.logo-nav-cont a:hover {
+  color: #f2f2f2;
+  background: #6e6e6e;
+}
+
+/* fin  botones */
+
+/* Com de imagen */
+.headerImg {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background: url(../img/entrada.jfif);
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+}
+.headerImg .bienvenidos {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.headerImg .bienvenidos h1 {
+  font-size: 60px;
+  color: rgb(231, 168, 168);
+  font-weight: 250;
+}
+.headerImg .bienvenidos hr {
+  width: 400px;
+  height: 8px;
+  background: rgb(231, 168, 168);
+  border: none;
+  margin-top: 5px;
+}
+
+.headerImg .bienvenidos p {
+  font-size: 20px;
+  color: rgb(231, 168, 168);
+  margin-top: 10px;
+}
+
+/* Fin de imagen */
+/* Grid */
+.grid{
+  width: 100%;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+}
+.gridMaterias{
+  width: 80%;
+  display: grid;
+  grid-template-columns: 100px 100px 100px 100px;
+  grid-gap: 10px;
+  align-items: center;
+  color: #fff;
+  box-shadow: 3px 3px 8px 0px rgba(0,0,0,0.3);
+  background-color: #505050;
+
+}
+.itemTitle .nombres .cuentaMat .facultad{
+  border-radius: 5px ;
+  padding: 10px;
+}
+
+
+
+
+/* fin Grid */
+
+/* in main */
+#main {
+  height: 850px;
+  margin: 2em auto;
+}
+/* fin main */
+
+/* Formulario de contacto */
+.container {
+  width: 100%;
+  height:78rem;
+  margin: 10px auto;
+  text-align: center;
+  /* display: flex;
+  justify-content: center; */
+}
+
+.formulario {
+  width: 50%;
+  background-color: rgb(90, 88, 88);
+  padding: 90px;
+  margin: auto;
+  margin-top: 100px;
+  box-shadow: 7px 13px 35px #000;
+  border-radius: 4px;
+  letter-spacing: 2px;
+}
+.formulario h3 {
+  font-size: 50px;
+  margin-bottom: 25px;
+  color: rgb(231, 168, 168);
+  text-align: center;
+}
+.controles {
+  font-size: 30px;
+  width: 100%;
+  background: #24303c;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 2px solid rgb(231, 168, 168);
+}
+.formulario p {
+  text-align: center;
+  color: rgb(231, 168, 168);
+  font-size: 25px;
+  margin-bottom: 10px;
+  line-height: 40px;
+  word-spacing: 5px;
+}
+.consulta {
+  font-size: 30px;
+  width: 100%;
+  height: 250px;
+  background-color: #24303c;
+  color: rgb(231, 168, 168);
+  border: 2px solid rgb(231, 168, 168);
+  padding: 12px;
+  margin-bottom: 15px;
+  text-align: center;
+}
+.formulario:hover {
+  color: white;
+  cursor: pointer;
+}
+.formulario .button {
+  font-size: 30px;
+
+  width: 100%;
+  color: rgb(231, 168, 168);
+  border: 2px solid rgb(231, 168, 168);
+  background: #24303c;
+  padding: 12px;
+}
+.formulario .button:hover {
+  color: #f2f2f2;
+  background: #6e6e6e;
+  cursor: pointer;
+}
+/* fin Formulario de contacto */
+
+/* Materias */
+.materias {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: url(/img/img2.jpg);
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  margin-top: 100px;
+}
+.materias .backGround {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+}
+.materias .ejeMaterias {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.materias .containerMAterias {
+  width: 90%;
+  margin: auto;
+  padding-top: 100px;
+}
+.materias .containerMAterias .TituloMaterias {
+  border: 2px solid rgb(231, 168, 168);
+  position: absolute;
+  z-index: 3;
+  left: 20em;
+  top: 25px;
+  opacity: 0.9;
+  padding: 10px;
+  text-align: center;
+  width: 50%;
+}
+.materias .containerMAterias .TituloMaterias h2 {
+  font-size: 30px;
+  color: rgb(231, 168, 168);
+  font-weight: normal;
+}
+.materias .containerMAterias .TituloMaterias hr {
+  color: rgb(231, 168, 168);
+  width: 100%;
+  margin-top: 10px auto;
+}
+.materias .containerMAterias .materiasImg {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 50px;
+  padding-bottom: 100px;
+}
+.materias .containerMAterias .materiasImg img {
+  width: calc(30% - 10px);
+  margin: 15px;
+  object-fit: cover;
+  border:3px solid #000;
+  box-shadow: 3px 3px 8px 0px rgba(0,0,0,0.3);
+  cursor: pointer;
+  position: relative;
+}
+/* videos */
+.containerVideo{
+  font-size: 30px;
+  width: 60%;
+  max-width: 850px;
+  margin: 0 auto;
+  align-items: center;
+  flex-wrap: wrap;
+  display: flex;
+  top: 250px;
+}
+.titleVideo {
+  text-align: center;
+  padding: 10px;
+  color: rgb(231, 168, 168);
+}
+.containerVideo .centrado .cuadros{
+  width: 80%;
+  margin: 10px;
+  max-width: 550px;
+  background: #6e6e6e;
+  border: 5px solid #000;
+  padding: 20px;
+  box-shadow: 13px 3px 8px 0px rgba(0,0,0,0.3);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  flex-direction: row;
+
+}
+
+.cuadros video{
+  width: 70%;
+  display: flex;
+
+  flex-direction: column;
+  border-right: 1px solid #ddd;
+  gap: 10px;
+}
+/* videos fin */
+
+/* Comienzo de bt nosotros */
+.team{
+  text-align: center;
+  padding: 10px;
+  color: rgb(231, 168, 168);
+}
+.contenido {
+  width: 100%;
+  gap: 50px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+
+.tarjetaContacto {
+  display: flex;
+  width: 300px;
+  background: #6e6e6e;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 1px 1px 4px  rgba(151, 148, 148, 0.2);
+  border: solid rgb(150, 149, 149) 5px;
+
+}
+.tarjetaContacto:hover{
+  border: solid rgba(231, 168, 168 ) 5px;
+}
+.encabezado {
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid #ddd;
+  gap: 10px;
+}
+.descrip {
+  background: #6e6e6e;
+  color: seashell;
+}
+.encabezado,
+.descrip {
+  padding: 20px;
+  text-align: center;
+}
+.encabezado img {
+  width: 160px;
+  border-radius: 50%;
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.06);
+  margin: 15px 10px;
+  transform: rotate(-30deg);
+}
+.encabezado a:hover img {
+  box-shadow: 0 0 0 12px rgba(0, 0, 0, 0.1);
+}
+.encabezado h2 {
+  color: rgb(231, 168, 168);
+}
+.encabezado h5 {
+  margin-bottom: 10px;
+  color: #fff;
+}
+.encabezado p {
+  color: #fff;
+  margin: 10px 30px;
+}
+.social {
+  margin-top: 25px;
+}
+.social a {
+  display: inline-block;
+  padding: 0 15px;
+  color: rgb(231, 168, 168);
+}
+
+/* fin nosotros tramo */
+
+
+/* footer */
+footer{
+  position: relative;
+  width: 100%;
+  background: #6e6e6e;
+  min-height: 100px;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 20px 0px 0px;
+}
+footer .iconoSocial, footer .footerMenu{
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  margin-top: 10px ;
+  flex-wrap: wrap;
+}
+footer .iconoSocial li, footer .footerMenu li{
+  list-style: none;
+  color: rgb(231, 168, 168);
+
+}
+footer .iconoSocial li a{
+  font-size: 2em;
+  color: rgb(231, 168, 168);
+  margin: 0 10px;
+  display: inline-block;
+  transition: 0.5s;
+}
+footer .iconoSocial li a:hover{
+  transform: translateY(-10px);
+
+}
+footer .footerMenu li a{
+  font-size: 1.2em;
+  color: rgb(231, 168, 168);
+  margin: 0 10px;
+  display: inline-block;
+  transition: 0.5s;
+  text-decoration: none;
+}
+footer .footerMenu li a:hover{
+  opacity: 1;
+}
+footer p{
+  color: rgb(231, 168, 168);
+  text-align: center;
+  margin-top: 15px;
+  margin-bottom: 10px;
+}
+
+footer .ola{
+  position: absolute;
+  top: -100px;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  background:  url(../img/wave.png);
+  background-size: 1000px 100px;
+}
+footer .ola#ola1{
+  z-index: 1000;
+  opacity: 1;
+  bottom: 0;
+  animation: animateOla 4s linear infinite;
+}
+footer .ola#ola2{
+  z-index: 999;
+  opacity: 0.5;
+  bottom: 10px;
+  animation: animateOla02 4s linear infinite;
+}
+footer .ola#ola3{
+  z-index: 999;
+  opacity: 0.2;
+  bottom: 15px;
+  animation: animateOla03 3s linear infinite;
+}
+footer .ola#ola4{
+  z-index: 999;
+  opacity: 0.7;
+  bottom: 20px;
+  animation: animateOla04 3s linear infinite;
+}
+@keyframes animateOla{
+  0%{
+    background-position-x: 1000px;
+  }
+  100%{
+    background-position-x: 0px;
+  }
+}
+@keyframes animateOla02{
+  0%{
+    background-position-x: 0px;
+  }
+  100%{
+    background-position-x: 1000px;
+  }
+}
